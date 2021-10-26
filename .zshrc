@@ -211,5 +211,13 @@ compinit -u -d "$compfile"
 promptinit
 prompt adam1
 
+# automatically start ssh-agent and make sure that only one ssh-agent process runs at a time
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+
 # Load zsh-syntax-highlighting; should be last
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
