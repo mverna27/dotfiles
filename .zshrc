@@ -17,7 +17,6 @@ SHELL=$(which zsh || echo '/bin/zsh')
 KEYTIMEOUT=1
 SAVEHIST=10000
 HISTSIZE=10000
-HISTCONTROL=ignoredups:ignorespace
 HISTFILE="$HOME/.cache/.zsh_history"
 
 # aliases
