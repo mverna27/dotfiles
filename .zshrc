@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 if [[ $- != *i* ]]; then
 	return
 fi
@@ -20,7 +27,8 @@ HISTSIZE=10000
 HISTFILE="$HOME/.cache/.zsh_history"
 
 # aliases
-alias la='ls -Ah'
+alias l='ls -lh'
+alias la='ls -lAh'
 alias ll='ls -lAh'
 alias grep='grep --color=auto'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -29,37 +37,19 @@ alias vi=vim
 alias gvim=vim
 alias view=rview
 
-ls() # ls with preferred arguments
-{
-	command ls --color=auto -F "$@"
+# ls with preferred arguments
+ls() {
+	command ls --color=auto "$@"
 }
 
-#cd() # cd and ls after
-#{
-#	builtin cd "$@" && command ls --color=auto -F
-#}
-
-src() # recompile completion and reload zsh
-{
+# recompile completion and reload zsh
+src() {
 	autoload -U zrecompile
 	rm -rf "$compfile"*
 	compinit -u -d "$compfile"
 	zrecompile -p "$compfile"
 	exec zsh
 }
-
-# less/manpager colours
-export MANWIDTH=80
-export LESS='-R'
-export LESSHISTFILE=-
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[32m'
-export LESS_TERMCAP_mb=$'\e[31m'
-export LESS_TERMCAP_md=$'\e[31m'
-export LESS_TERMCAP_so=$'\e[47;30m'
-export LESSPROMPT='?f%f .?ltLine %lt:?pt%pt\%:?btByte %bt:-...'
 
 # completion
 setopt CORRECT
@@ -92,7 +82,6 @@ setopt INTERACTIVE_COMMENTS
 autoload -U compinit     # completion
 autoload -U terminfo     # terminfo keys
 zmodload -i zsh/complist # menu completion
-autoload -U promptinit   # prompt
 
 # better history navigation, matching currently typed text
 autoload -U up-line-or-beginning-search; zle -N up-line-or-beginning-search
@@ -104,8 +93,8 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	zle-line-finish() { echoti rmkx; }; zle -N zle-line-finish
 fi
 
-exp_alias() # expand aliases to the left (if any) before inserting the key pressed
-{ # expand aliases
+# expand aliases to the left (if any) before inserting the key pressed
+exp_alias() {
 	zle _expand_alias
 	zle self-insert
 }; zle -N exp_alias
@@ -114,9 +103,6 @@ exp_alias() # expand aliases to the left (if any) before inserting the key press
 set -o emacs
 
 # bind keys not in terminfo
-bindkey -- ' '     exp_alias
-bindkey -- '^P'    up-history
-bindkey -- '^N'    down-history
 bindkey -- '^E'    end-of-line
 bindkey -- '^A'    beginning-of-line
 bindkey -- '^[^M'  self-insert-unmeta # alt-enter to insert a newline/carriage return
@@ -200,16 +186,13 @@ zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<-
 zstyle -e ':completion:*:hosts' hosts 'reply=( ${=${=${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//\]:[0-9]*/ }//,/ }//\[/ } ${=${(f)"$(cat /etc/hosts(|)(N) <<(ypcat hosts 2>/dev/null))"}%%\#*} ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}})'
 ttyctl -f
 
+# custom git command for dotfiles bare git repository
 config() {
 	git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
 }
 
 # initialize completion
 compinit -u -d "$compfile"
-
-# initialize prompt with a decent built-in theme
-promptinit
-prompt adam1
 
 # automatically start ssh-agent and make sure that only one ssh-agent process runs at a time
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
@@ -219,5 +202,9 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 
-# Load zsh-syntax-highlighting; should be last
+# Load; should be last
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
