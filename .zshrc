@@ -104,9 +104,13 @@ set -o emacs
 
 # bind keys not in terminfo
 bindkey -- '^E'    end-of-line
+bindkey -- ';5A'   end-of-line
+bindkey -- ';3A'   end-of-line
 bindkey -- '^A'    beginning-of-line
-bindkey -- '^[^M'  self-insert-unmeta # alt-enter to insert a newline/carriage return
-bindkey -- '^[05M' accept-line # fix for enter key on some systems
+bindkey -- ';5B'   beginning-of-line
+bindkey -- ';3B'   beginning-of-line
+bindkey -- '^[^M'  self-insert-unmeta 	# alt-enter to insert a newline/carriage return
+bindkey -- '^[05M' accept-line 		# fix for enter key on some systems
 bindkey -- ';5D'   backward-word
 bindkey -- ';3D'   backward-word
 bindkey -- ';5C'   forward-word
