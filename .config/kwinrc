@@ -31,7 +31,6 @@ Duration=100
 Meta=org.kde.krunner,/App,,toggleDisplay
 
 [NightColor]
-Active=true
 NightTemperature=3700
 
 [Plugins]
