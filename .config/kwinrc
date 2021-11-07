@@ -41,7 +41,9 @@ forceblurEnabled=true
 glideEnabled=true
 kwin4_effect_fadeEnabled=false
 minimizeallEnabled=false
+sticky-window-snappingEnabled=true
 synchronizeskipswitcherEnabled=false
+ultrawidewindowsEnabled=true
 videowallEnabled=false
 
 [Script-bismuth]
