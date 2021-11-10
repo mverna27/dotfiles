@@ -156,9 +156,17 @@ screenrule=2
 wmclass=osu!.exe
 wmclassmatch=1
 
+[8]
+Description=Settings for league of legends.exe league of legends.exe
+blockcompositing=true
+blockcompositingrule=2
+wmclass=league of legends.exe league of legends.exe
+wmclasscomplete=true
+wmclassmatch=1
+
 [General]
 count=8
-rules=1,2,3,4,5,6,7,64ecda35-6fb6-424c-9fd1-95812522f0a3
+rules=1,2,3,4,5,6,7,8
 
 [a7b0b2ed-6356-4212-951f-788e7cbf0cbf]
 Description=New window settings
