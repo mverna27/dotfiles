@@ -41,6 +41,8 @@ desktopchangeosdEnabled=false
 forceblurEnabled=true
 glideEnabled=true
 kwin4_effect_fadeEnabled=false
+kwin4_effect_squashEnabled=false
+magiclampEnabled=true
 minimizeallEnabled=false
 sticky-window-snappingEnabled=true
 synchronizeskipswitcherEnabled=false
@@ -66,7 +68,6 @@ patterns=yakuake\nurxvt\nkeepassxc\nguake\nalacritty
 
 [TabBox]
 HighlightWindows=false
-LayoutName=big_icons
 
 [Windows]
 RollOverDesktops=false
@@ -74,4 +75,4 @@ SeparateScreenFocus=true
 
 [org.kde.kdecoration2]
 ButtonsOnLeft=
-ButtonsOnRight=IAX
+ButtonsOnRight=IX
