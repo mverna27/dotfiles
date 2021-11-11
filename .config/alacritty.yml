@@ -146,22 +146,22 @@ window:
 # Font configuration
 font:
   normal:
-    family: monospace
+    family: source code pro
     style: Regular
 
   bold:
-    family: monospace
+    family: source code pro
     style: Bold
 
   italic:
-    family: monospace
+    family: source code pro
     style: Italic
 
   bold_italic:
-    family: monospace
+    family: source code pro
     style: Bold Italic
 
-  size: 12
+  size: 13
 #font:
 # Normal (roman) font face
 #normal:
