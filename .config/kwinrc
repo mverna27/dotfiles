@@ -2,6 +2,7 @@
 update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend
 
 [Compositing]
+Enabled=false
 GLCore=true
 GLTextureFilter=1
 OpenGLIsUnsafe=false
@@ -31,16 +32,14 @@ Meta=org.kde.krunner,/App,,toggleDisplay
 
 [NightColor]
 Active=true
-Mode=Constant
 
 [Plugins]
 bismuthEnabled=false
 blurEnabled=true
 desktopchangeosdEnabled=false
-forceblurEnabled=true
+forceblurEnabled=false
 kwin4_effect_dimscreenEnabled=true
-kwin4_effect_fadeEnabled=false
-kwin4_effect_scaleEnabled=true
+kwin4_effect_translucencyEnabled=true
 minimizeallEnabled=false
 sticky-window-snappingEnabled=true
 synchronizeskipswitcherEnabled=false
@@ -66,7 +65,6 @@ patterns=yakuake\nurxvt\nkeepassxc\nguake\nalacritty
 
 [TabBox]
 HighlightWindows=false
-LayoutName=thumbnail_grid
 
 [Windows]
 RollOverDesktops=false
