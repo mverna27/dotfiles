@@ -43,7 +43,7 @@ font pango: DejaVu Sans Mono 11
 
 ### Window settings
 #
-gaps inner 8
+gaps inner 12
 default_border pixel 4
 
 # Basic color configuration using the Base16 variables for windows and borders.
@@ -119,6 +119,9 @@ input "1739:52620:SYNA8005:00_06CB:CD8C_Touchpad" {
     # Start your launcher
     bindsym $mod+d exec $menu
     bindsym Alt+Space exec $menu
+
+    # Take screenshot
+    bindsym Print exec grimshot copy area
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
