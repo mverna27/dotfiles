@@ -205,7 +205,7 @@ ttyctl -f
 
 # custom git command for dotfiles bare git repository
 config() {
-#	cp /etc/xdg/nvim/sysinit.vim $HOME/.systemwide_configs/etc/xdg/nvim/sysinit.vim
+	cp /etc/xdg/nvim/sysinit.vim $HOME/.systemwide_configs/etc/xdg/nvim/sysinit.vim
 	cp /etc/fstab $HOME/.systemwide_configs/etc/fstab
 #	cp /usr/share/libalpm/hooks/bash-update.hook $HOME/.systemwide_configs/usr/share/libalpm/hooks/bash-update.hook
 	cp /etc/environment $HOME/.systemwide_configs/etc/environment
