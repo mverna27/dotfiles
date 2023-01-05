@@ -205,16 +205,16 @@ ttyctl -f
 
 # custom git command for dotfiles bare git repository
 config() {
-	cp /etc/xdg/nvim/sysinit.vim $HOME/systemwide_configs/etc/xdg/nvim/sysinit.vim
-	cp /etc/fstab $HOME/systemwide_configs/etc/fstab
-	cp /usr/share/libalpm/hooks/bash-update.hook $HOME/systemwide_configs/usr/share/libalpm/hooks/bash-update.hook
-	cp /etc/environment $HOME/systemwide_configs/etc/environment
-	cp /etc/X11/xorg.conf.d/20-amdgpu.conf $HOME/systemwide_configs/etc/X11/xorg.conf.d/20-amdgpu.conf
-	cp /etc/systemd/system/getty@tty1.service.d/autologin.conf $HOME/systemwide_configs/etc/systemd/system/getty@tty1.service.d/autologin.conf
-	cp /etc/X11/xorg.conf.d/50-mouse-acceleration.conf $HOME/systemwide_configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf
-	cp /etc/libinput/local-overrides.quirks $HOME/systemwide_configs/etc/libinput/local-overrides.quirks
-	cp /etc/wireplumber/main.lua.d/50-alsa-config.lua $HOME/systemwide_configs/etc/wireplumber/main.lua.d/50-alsa-config.lua
-	cat $HOME/.steam/steam/userdata/213177125/config/localconfig.vdf | grep LaunchOptions > $HOME/arch/steam-launch-options
+#	cp /etc/xdg/nvim/sysinit.vim $HOME/systemwide_configs/etc/xdg/nvim/sysinit.vim
+#	cp /etc/fstab $HOME/systemwide_configs/etc/fstab
+#	cp /usr/share/libalpm/hooks/bash-update.hook $HOME/systemwide_configs/usr/share/libalpm/hooks/bash-update.hook
+#	cp /etc/environment $HOME/systemwide_configs/etc/environment
+#	cp /etc/X11/xorg.conf.d/20-amdgpu.conf $HOME/systemwide_configs/etc/X11/xorg.conf.d/20-amdgpu.conf
+#	cp /etc/systemd/system/getty@tty1.service.d/autologin.conf $HOME/systemwide_configs/etc/systemd/system/getty@tty1.service.d/autologin.conf
+#	cp /etc/X11/xorg.conf.d/50-mouse-acceleration.conf $HOME/systemwide_configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+#	cp /etc/libinput/local-overrides.quirks $HOME/systemwide_configs/etc/libinput/local-overrides.quirks
+#	cp /etc/wireplumber/main.lua.d/50-alsa-config.lua $HOME/systemwide_configs/etc/wireplumber/main.lua.d/50-alsa-config.lua
+#	cat $HOME/.steam/steam/userdata/213177125/config/localconfig.vdf | grep LaunchOptions > $HOME/arch/steam-launch-options
 	git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
 }
 
