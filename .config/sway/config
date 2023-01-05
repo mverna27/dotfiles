@@ -121,7 +121,9 @@ input "1739:52620:SYNA8005:00_06CB:CD8C_Touchpad" {
     bindsym Alt+Space exec $menu
 
     # Take screenshot
-    bindsym Print exec grimshot copy area
+    bindsym Print exec grimshot copy output
+    bindsym Ctrl+Print exec grimshot copy area
+    bindsym Ctrl+Alt+Print exec grimshot copy window
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
