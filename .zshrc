@@ -211,7 +211,6 @@ config() {
 #	cp /usr/share/libalpm/hooks/bash-update.hook $HOME/.systemwide_configs/usr/share/libalpm/hooks/bash-update.hook
 	cp /etc/environment $HOME/.systemwide_configs/etc/environment
 #	cp /etc/systemd/system/getty@tty1.service.d/autologin.conf $HOME/.systemwide_configs/etc/systemd/system/getty@tty1.service.d/autologin.conf
-#	cp /etc/libinput/local-overrides.quirks $HOME/.systemwide_configs/etc/libinput/local-overrides.quirks
 #	cp /etc/wireplumber/main.lua.d/50-alsa-config.lua $HOME/.systemwide_configs/etc/wireplumber/main.lua.d/50-alsa-config.lua
         cp /etc/libinput.conf $HOME/.systemwide_configs/etc/libinput.conf
 	git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
