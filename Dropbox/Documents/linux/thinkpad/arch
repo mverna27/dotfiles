@@ -142,6 +142,18 @@ systemctl start cronie.service
 atlassian.com/git/tutorials/dotfiles
 https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3
 
+- update remote repo with local changes:
+config commit -am "message"
+
+- pull changes from feature branch into master for a specific file only:
+config checkout master
+config checkout <feature> <file>
+
+- to fix the "1 commit behind" in feature branch after merge, we need to merge master into feature branch:
+config checkout feature
+config merge master
+config push
+
 
 
 -> git token / SSH authentication 
