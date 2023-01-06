@@ -35,7 +35,7 @@ font pango: DejaVu Sans Mono 11
 #  private:
 #  output * bg /home/marco/Dropbox/Documents/pictures/3840x2160/wp2301562-anime-4k-wallpapers.jpg fill
 #  work:
-   output "*" bg /home/marco/Downloads/pexels-maxime-francis-2246476.jpg fill
+   output * bg /home/marco/Downloads/pexels-maxime-francis-2246476.jpg fill
 #
 # Example configuration:
 #
