@@ -32,10 +32,10 @@ font pango: DejaVu Sans Mono 11
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#  private:
-#  output * bg /home/marco/Dropbox/Documents/pictures/3840x2160/wp2301562-anime-4k-wallpapers.jpg fill
-#  work:
-   output * bg /home/marco/Downloads/pexels-maxime-francis-2246476.jpg fill
+#  Wallpaper Profile #1 (private):
+   output * bg /home/marco/Dropbox/Documents/pictures/3840x2160/wp2301562-anime-4k-wallpapers.jpg fill
+#  Wallpaper Profile #2 (work):
+#  output * bg /home/marco/Downloads/pexels-maxime-francis-2246476.jpg fill
 #
 # Example configuration:
 #
