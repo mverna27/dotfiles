@@ -32,10 +32,7 @@ font pango: DejaVu Sans Mono 11
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#  Wallpaper Profile #1 (private):
-   output * bg /home/marco/Dropbox/Documents/pictures/3840x2160/wp2301562-anime-4k-wallpapers.jpg fill
-#  Wallpaper Profile #2 (work):
-#  output * bg /home/marco/Downloads/pexels-maxime-francis-2246476.jpg fill
+   output * bg active_wallpaper fill
 #
 # Example configuration:
 #
@@ -126,6 +123,9 @@ input "1739:52620:SYNA8005:00_06CB:CD8C_Touchpad" {
     bindsym Print exec grimshot copy output
     bindsym Ctrl+Print exec grimshot copy area
     bindsym Ctrl+Alt+Print exec grimshot copy window
+
+    # Switch wallpaper profile and reload configuration file
+    bindsym $mod+Shift+s exec $HOME/.config/sway/toggle_wallpaper.sh
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
