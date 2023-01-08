@@ -25,6 +25,9 @@ set $fm pcmanfm
 # set $menu bemenu-run --no-exec | xargs swaymsg exec --
 set $menu bemenu-run --no-exec -i -n -l 20 -W 0.5 --fn "DejaVu Sans Mono" 10 --scrollbar autohide | xargs swaymsg exec --
 
+# Set Neovim
+set $neovim $term --title Neovim --command nvim
+
 # Font
 # font pango: Monospace 11
 font pango: DejaVu Sans Mono 11
@@ -166,23 +169,30 @@ input "1739:52620:SYNA8005:00_06CB:CD8C_Touchpad" {
 #
 # Workspaces:
 #
+    # Workspaces
+    set $ws_www 1:www
+    set $ws_mail 2:mail
+    set $ws_editor 3:editor
+    set $ws_terminals 4:terminals
+    set $ws_discord 5:discord
+
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
+    bindsym $mod+1 workspace $ws_www
+    bindsym $mod+2 workspace $ws_mail
+    bindsym $mod+3 workspace $ws_editor
+    bindsym $mod+4 workspace $ws_terminals
+    bindsym $mod+5 workspace $ws_discord
     bindsym $mod+6 workspace number 6
     bindsym $mod+7 workspace number 7
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+1 move container to workspace $ws_www
+    bindsym $mod+Shift+2 move container to workspace $ws_mail
+    bindsym $mod+Shift+3 move container to workspace $ws_editor
+    bindsym $mod+Shift+4 move container to workspace $ws_terminals
+    bindsym $mod+Shift+5 move container to workspace $ws_discord
     bindsym $mod+Shift+6 move container to workspace number 6
     bindsym $mod+Shift+7 move container to workspace number 7
     bindsym $mod+Shift+8 move container to workspace number 8
@@ -191,12 +201,29 @@ input "1739:52620:SYNA8005:00_06CB:CD8C_Touchpad" {
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
+    # Switch between workspaces
+    bindsym Ctrl+$mod+left workspace prev
+    bindsym Ctrl+$mod+right workspace next
+
     # Allow switching between workspaces with left and right swipes
     bindgesture swipe:right workspace prev
     bindgesture swipe:left workspace next
 
     # Alt-Tab replacement
     bindsym Alt+Tab workspace back_and_forth
+
+    ### Assign applications to workspaces
+    assign [app_id="^firefox"]     → workspace $ws_www
+    assign [class="Thunderbird"]   → workspace $ws_mail
+    assign [title="^Neovim$"]      → workspace $ws_editor
+    assign [class="^code-oss"]     → workspace $ws_editor
+    assign [class="^discord"]      → workspace $ws_discord
+    for_window [class="Spotify"] move window to workspace $ws_discord
+
+    ### Change window settings
+    # for_window [window_role="browser"] layout tabbed
+    for_window [class="^discord"] layout tabbed
+    for_window [class="Spotify"] layout tabbed
 
 #
 # Layout stuff:

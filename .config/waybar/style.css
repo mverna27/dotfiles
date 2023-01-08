@@ -16,26 +16,35 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    border-top: 2px solid transparent;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #ffffff;
+    /*padding: 0 5px;*/
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each workspace name */
-    border: none;
-    border-radius: 0;
-    font-weight: bold;
+    /*border: none;*/
+    /*border-radius: 0;*/
+    /*font-weight: bold;*/
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    box-shadow: inset 0 -3px #ffffff;
+    /*box-shadow: inset 0 -3px #ffffff;*/
 }
 
 #workspaces button.focused {
-    box-shadow: inset 0 -3px #ffffff;
+    border-color: #4c7899;
+    color: white;
+    background-color: #285577;
+    /*box-shadow: inset 0 -1px #ffffff;*/
 }
 
 #workspaces button.urgent {
+    border-color: #c9545d;
+    color: #c9545d;
     background-color: #eb4d4b;
 }
 
@@ -151,8 +160,9 @@ window#waybar.hidden {
 }
 
 #battery.charging, #battery.plugged {
-    color: #161320;
-    background-color: #B5E8E0;
+    /*color: #161320;*/
+    /*background-color: #B5E8E0;*/
+    color: #B5E8E0;
 }
 
 #battery.critical:not(.charging) {
@@ -308,7 +318,8 @@ window#waybar.hidden {
     transition: none;
     /*color: #161320;*/
     /*background: #F2CDCD;*/
-    color: #F2CDCD;
+    /*color: #F2CDCD;*/
+    color: rgb(102, 220, 105);
 }
 
 #gamemode {

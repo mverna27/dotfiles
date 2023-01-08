@@ -4,6 +4,7 @@ bat
 bc
 blender
 clang
+code
 dash
 discord
 ffmpegthumbnailer
@@ -18,6 +19,7 @@ hwinfo
 imv
 intel-ucode
 intel-undervolt
+libappindicator-gtk3
 libreoffice-fresh
 libva-mesa-driver
 libva-utils
