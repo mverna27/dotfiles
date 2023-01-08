@@ -11,5 +11,10 @@ set clipboard+=unnamedplus              " enable clipboard copy / paste
 set ignorecase
 set smartcase
 
+" Indent 4 spaces instead of tab character
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " Replace all is aliased to S
 nnoremap S :%s//g<Left><Left>
