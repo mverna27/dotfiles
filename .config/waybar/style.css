@@ -48,7 +48,7 @@ window#waybar.hidden {
     margin-top: 6px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
@@ -69,7 +69,7 @@ window#waybar.hidden {
     margin-top: 6px;
     margin-left: 12px;
     font-size: 4px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     background: #161320;
     transition: none;
@@ -114,7 +114,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -127,7 +127,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #1A1826;
@@ -139,7 +139,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -173,7 +173,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -186,7 +186,7 @@ window#waybar.hidden {
     margin-right: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -198,7 +198,7 @@ window#waybar.hidden {
     margin-top: 6px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
@@ -210,7 +210,7 @@ window#waybar.hidden {
     margin-top: 6px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
@@ -222,7 +222,7 @@ window#waybar.hidden {
     margin-top: 6px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
@@ -235,7 +235,7 @@ window#waybar.hidden {
     margin-top: 6px;
     margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     padding-right: 10px;
     border-radius: 10px;
     transition: none;
@@ -262,7 +262,7 @@ window#waybar.hidden {
     margin-right: 8px;
     padding-left: 10px;
     padding-right: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -274,7 +274,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -286,7 +286,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -298,7 +298,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -310,7 +310,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #161320;
@@ -323,7 +323,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #1A1826;
@@ -335,7 +335,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #1A1826;
@@ -347,7 +347,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #1A1826;
@@ -359,7 +359,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #1A1826;
@@ -371,7 +371,7 @@ window#waybar.hidden {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
     border-radius: 10px;
     transition: none;
     color: #1A1826;

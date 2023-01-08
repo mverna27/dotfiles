@@ -1,7 +1,8 @@
 {
     "layer": "top",
     "modules-left": ["custom/launcher","tray","sway/workspaces","custom/media"],
-    "modules-center": ["river/tags","sway/window"],
+  //"modules-center": ["river/tags","sway/window"],
+    "modules-center": ["sway/window"],
   //"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
     "modules-right": ["cpu","temperature","memory","network","pulseaudio","backlight","battery","clock"],
 
