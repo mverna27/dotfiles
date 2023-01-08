@@ -45,7 +45,7 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     margin-bottom: 4px;
@@ -62,11 +62,12 @@ window#waybar.hidden {
 }
 
 #window {
+    font-size: 14px;
     font-weight: bold;
 }
 
 #tags {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 12px;
     font-size: 4px;
     margin-bottom: 4px;
@@ -110,7 +111,7 @@ window#waybar.hidden {
 }
 
 #network {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -123,7 +124,7 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -135,7 +136,7 @@ window#waybar.hidden {
 }
 
 #battery {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -169,7 +170,7 @@ window#waybar.hidden {
 }
 
 #backlight {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -181,7 +182,7 @@ window#waybar.hidden {
     background: #FFFFFF;
 }
 #clock {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     margin-right: 8px;
     padding-left: 10px;
@@ -195,7 +196,7 @@ window#waybar.hidden {
 }
 
 #memory {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     margin-bottom: 4px;
@@ -207,7 +208,7 @@ window#waybar.hidden {
     background: #90EE90;
 }
 #cpu {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     margin-bottom: 4px;
@@ -219,7 +220,7 @@ window#waybar.hidden {
 }
 
 #temperature {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     margin-bottom: 4px;
@@ -232,7 +233,7 @@ window#waybar.hidden {
 }
 
 #tray {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     margin-bottom: 4px;
@@ -244,8 +245,8 @@ window#waybar.hidden {
 }
 
 #custom-launcher {
-    font-size: 24px;
-    margin-top: 6px;
+    font-size: 26px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 16px;
     padding-right: 5px;
@@ -257,7 +258,7 @@ window#waybar.hidden {
 
 #custom-power {
     font-size: 20px;
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     margin-right: 8px;
     padding-left: 10px;
@@ -270,7 +271,7 @@ window#waybar.hidden {
 }
 
 #custom-wallpaper {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -282,7 +283,7 @@ window#waybar.hidden {
 }
 
 #custom-updates {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -294,7 +295,7 @@ window#waybar.hidden {
 }
 
 #custom-media {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -306,7 +307,7 @@ window#waybar.hidden {
 }
 
 #gamemode {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -319,7 +320,7 @@ window#waybar.hidden {
 }
 
 #custom-check_pi {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -331,7 +332,7 @@ window#waybar.hidden {
 }
 
 #custom-check_vsyscall32 {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -343,7 +344,7 @@ window#waybar.hidden {
 }
 
 #custom-max_render_time {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -355,7 +356,7 @@ window#waybar.hidden {
 }
 
 #custom-check_vrr {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -367,7 +368,7 @@ window#waybar.hidden {
 }
 
 #custom-check_otd {
-    margin-top: 6px;
+    margin-top: 4px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
