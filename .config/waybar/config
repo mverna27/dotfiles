@@ -1,154 +1,143 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "tray", "clock"],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+	"layer": "top",
+	"modules-left": ["custom/launcher","tray","sway/workspaces","custom/media"],
+	"modules-center": ["river/tags","sway/window"],
+	//"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
+	"modules-right": ["cpu","temperature","memory","network","pulseaudio","backlight","battery","clock"],
+
+     "mpd": {
+         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+         "format-disconnected": "Disconnected ",
+         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+         "unknown-tag": "N/A",
+         "interval": 2,
+         "consume-icons": {
+             "on": " "
+         },
+         "random-icons": {
+             "off": "<span color=\"#f53c3c\"></span> ",
+             "on": " "
+         },
+         "repeat-icons": {
+             "on": " "
+         },
+         "single-icons": {
+             "on": "1 "
+         },
+         "state-icons": {
+             "paused": "",
+             "playing": ""
+         },
+         "tooltip-format": "MPD (connected)",
+         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+	"pulseaudio": {
+            // "scroll-step": 1, // %, can be a float
+            "format": "{volume}% {icon}  {format_source}",
+            "format-bluetooth": "{volume}% {icon}  {format_source}",
+            "format-bluetooth-muted": " {icon}  {format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "format-icons": {
+                //"headphone": "",
+                //"hands-free": "",
+                //"headset": "",
+                "phone": "",
+                "portable": "",
+                "default": ["", "", ""]
+            },
+            "on-click": "pavucontrol",
+            "min-length": 12,
     },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+
+    "river/tags": {
+		"num-tags": 6
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        // "timezone": "America/New_York",
-	"format": "{: %d/%m   %I:%M %p}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
+	"network": {
+		"tooltip": false,
+		"format-wifi": "  {essid}",
+		"format-ethernet": ""
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+        "on-scroll-up": "light -A 5",
+		"on-scroll-down": "light -U 5"
+	},
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 20
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
+	"tray":{
+		"icon-size": 24,
+		"spacing": 12
+	},
+    "clock": {
+        "format": "{: %d/%m   %I:%M %p}",
+        "min-length": 17,
+        "max-length": 25
     },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "cpu": {
+        "interval": 5,
+        "format": " {usage}%",
+        "min-length": 5,
+        "max-length": 10
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""]
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {percentage}%",
+        "min-length": 5,
+        "max-length": 10
+    },
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "bemenu-run --no-exec -i -n -l 20 -W 0.5 --fn 'DejaVu Sans Mono' 10 --scrollbar autohide | xargs swaymsg exec --",
+        "on-click-right": "killall bemenu-run"
+    },
+    "custom/power":{
+        "format": " ",
+        "on-click": "bash ~/.config/rofi/leave/leave.sh",
+    },
+    "custom/updates":{
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 15,
+        "on-click": "alacritty -e paru -Syu && notify-send 'The system has been updated' "
+    },
+    "custom/wallpaper":{
+        "format":" ",
+        "on-click": "bash ~/.config/system_scripts/pkill_bc"
+    },
+    "gamemode": {
+    "format": "{glyph}",
+    "format-alt": "{glyph} {count}",
+    "glyph": "",
+    "hide-not-running": true,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 20,
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}"
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -159,7 +148,43 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "on-click": "playerctl play-pause"
+    },
+    "custom/check_pi": {
+        "interval": 3600,
+        "format": "{icon} {} {icon}",
+        "max-length": 80,
+        "format-icons": {
+            "default": "❌"
+        },
+        "escape": true,
+        // "exec": "$HOME/.config/waybar/check_pi_reachable.sh 2> /dev/null", // Script in resources folder
+        "exec": "echo 'RASPBERRY PI HAS BECOME UNREACHABLE AND REQUIRES MANUAL RESTART'",
+        "exec-if": "$(! ping -c 1 -W 0.1 192.168.0.3 | grep '1 received')",
+    },
+          "custom/max_render_time": {
+          "interval": 60,
+          "format": "{}",
+          //"min-length": 4,
+          "max-length": 80,
+          "escape": true,
+          "exec": "$HOME/.config/waybar/check_max_render_time.sh"
+    },
+          "custom/check_vrr": {
+          "interval": 60,
+          "format": "{}",
+          "max-length": 80,
+          "escape": true,
+          "exec": "$HOME/.config/waybar/check_vrr.sh",
+    },
+          "custom/check_otd": {
+          "interval": 60,
+          "format": "{}",
+          "max-length": 80,
+          "escape": true,
+          "exec": "$HOME/.config/waybar/check_otd.sh",
+          "on-click": "otd-gui"
     }
 }
