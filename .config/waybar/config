@@ -47,9 +47,9 @@
         "format-icons": {
             "1:www": "龜", // Icon: firefox-browser
             //"2:mail": "", // Icon: mail
-            "3:editor": "", // Icon: code
-            "4:terminals": "", // Icon: terminal
-            "5:discord": "💬", // Icon: chat.
+            "2:editor": "", // Icon: code
+            "3:terminals": "", // Icon: terminal
+            "4:discord": "💬", // Icon: chat.
             "urgent": "",
             "focused": "",
             "default": ""
