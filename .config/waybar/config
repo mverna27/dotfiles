@@ -22,6 +22,7 @@
 
     //"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
     "modules-right": [
+        "idle_inhibitor",
         "network",
         "pulseaudio",
         "battery",
@@ -137,6 +138,14 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+},
 
     "tray":{
         "icon-size": 18,
