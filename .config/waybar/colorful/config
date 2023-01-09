@@ -1,58 +1,10 @@
-// =============================================================================
-//
-// Waybar configuration
-//
-// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
-//
-// =============================================================================
-
 {
     "layer": "top",
-
-    "modules-left": [
-        "sway/workspaces",
-        "tray",
-        "custom/media"
-    ],
-
-    //"modules-center": ["river/tags","sway/window"],
-    "modules-center": [
-        "sway/window"
-    ],
-
-    //"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
-    "modules-right": [
-        "network",
-        "pulseaudio",
-        "battery",
-        "clock"
-    ],
-
-    // -------------------------------------------------------------------------
-    // Modules
-    // -------------------------------------------------------------------------
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 60
-    },
-
-    "sway/workspaces": {
-        "all-outputs": false,
-        "disable-scroll": true,
-        //"format": "{icon} {name}",
-        "format": " {icon} ",
-        "format-icons": {
-            "1:www": "龜", // Icon: firefox-browser
-            "2:mail": "", // Icon: mail
-            "3:editor": "", // Icon: code
-            "4:terminals": "", // Icon: terminal
-            "5:discord": "💬", // Icon: chat.
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
+    "modules-left": ["custom/launcher","tray","sway/workspaces","custom/media"],
+  //"modules-center": ["river/tags","sway/window"],
+    "modules-center": ["sway/window"],
+  //"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
+    "modules-right": ["cpu","temperature","memory","network","pulseaudio","backlight","battery","clock"],
 
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -80,14 +32,13 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-
     "pulseaudio": {
      // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%  {format_source}",
-        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        "format": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
         "format-muted": " {format_source}",
-        "format-source": " {volume}%",
+        "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             //"headphone": "",
@@ -98,25 +49,17 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-      //"min-length": 12,
+        "min-length": 12,
     },
 
     "river/tags": {
         "num-tags": 6
     },
-
     "network": {
-      	"format-wifi": "  {essid} ({signalStrength}%)",
-      	"format-ethernet": "{ifname} ",
-      	"format-disconnected": "", //An empty format will hide the module.
-      	"format-disconnected": "",
-      	"tooltip-format": "{ifname}",
-      	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      	"tooltip-format-ethernet": "{ifname} ",
-      	"tooltip-format-disconnected": "Disconnected",
-      	"max-length": 50
+        "tooltip": false,
+        "format-wifi": "  {essid}",
+        "format-ethernet": ""
     },
-
     "backlight": {
         "tooltip": false,
         "format": " {}%",
@@ -124,7 +67,6 @@
         "on-scroll-up": "light -A 5",
         "on-scroll-down": "light -U 5"
     },
-
     "battery": {
         "states": {
             "good": 95,
@@ -137,57 +79,44 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-
     "tray":{
-        "icon-size": 18,
+        "icon-size": 24,
         "spacing": 12
     },
-
     "clock": {
         "format": "{: %d/%m   %I:%M %p}",
         "min-length": 17,
         "max-length": 25
     },
-
     "cpu": {
         "interval": 5,
         "format": " {usage}%",
         "min-length": 5,
         "max-length": 10
     },
-
     "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        //"interval": 5,
-        "format": "{icon}  {temperatureC}°C",
-        "format-icons": [
-            "", // Icon: temperature-empty
-            "", // Icon: temperature-quarter
-            "", // Icon: temperature-half
-            "", // Icon: temperature-three-quarters
-            ""  // Icon: temperature-full
-        ],
-        "tooltip": true
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
     },
-
     "memory": {
         "interval": 5,
         "format": " {percentage}%",
         "min-length": 5,
         "max-length": 10
     },
-
     "custom/launcher":{
         "format": " ",
         "on-click": "bemenu-run --no-exec -i -n -l 20 -W 0.5 --fn 'DejaVu Sans Mono' 10 --scrollbar autohide | xargs swaymsg exec --",
         "on-click-right": "killall bemenu-run"
     },
-
     "custom/power":{
         "format": " ",
         "on-click": "bash ~/.config/rofi/leave/leave.sh",
     },
-
     "custom/updates":{
         "format": "{} Update(s)",
         "exec": "checkupdates | wc -l",
@@ -195,12 +124,10 @@
         "interval": 15,
         "on-click": "alacritty -e paru -Syu && notify-send 'The system has been updated' "
     },
-
     "custom/wallpaper":{
         "format":" ",
         "on-click": "bash ~/.config/system_scripts/pkill_bc"
     },
-
     "gamemode": {
         "format": "{glyph}",
         "format-alt": "{glyph} {count}",
@@ -213,7 +140,6 @@
         "tooltip": true,
         "tooltip-format": "Games running: {count}"
     },
-
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
@@ -227,7 +153,6 @@
       //"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
         "on-click": "playerctl play-pause"
     },
-    
     "custom/check_pi": {
         "interval": 3600,
         "format": "{icon} {} {icon}",
@@ -240,7 +165,6 @@
         "exec": "echo 'RASPBERRY PI HAS BECOME UNREACHABLE AND REQUIRES MANUAL RESTART'",
         "exec-if": "$(! ping -c 1 -W 0.1 192.168.0.3 | grep '1 received')",
     },
-
     "custom/max_render_time": {
         "interval": 60,
         "format": "{}",
@@ -249,7 +173,6 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/check_max_render_time.sh"
     },
-
     "custom/check_vrr": {
         "interval": 60,
         "format": "{}",
@@ -257,7 +180,6 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/check_vrr.sh",
     },
-
     "custom/check_otd": {
         "interval": 60,
         "format": "{}",
