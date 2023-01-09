@@ -46,7 +46,7 @@
         "format": " {icon} ",
         "format-icons": {
             "1:www": "龜", // Icon: firefox-browser
-            "2:mail": "", // Icon: mail
+            //"2:mail": "", // Icon: mail
             "3:editor": "", // Icon: code
             "4:terminals": "", // Icon: terminal
             "5:discord": "💬", // Icon: chat.
@@ -84,12 +84,13 @@
     },
 
     "pulseaudio": {
-     // "scroll-step": 1, // %, can be a float
+        //"scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%  {format_source}",
         "format-bluetooth": " {icon} {volume}%  {format_source}",
         "format-bluetooth-muted": "  {icon}  {format_source}",
         "format-muted": " {format_source}",
-        "format-source": " {volume}%",
+        //"format-source": " {volume}%",
+        "format-source": "",
         "format-source-muted": "",
         "format-icons": {
             //"headphone": "",

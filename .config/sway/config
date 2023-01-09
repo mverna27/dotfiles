@@ -171,17 +171,18 @@ input "1739:52620:SYNA8005:00_06CB:CD8C_Touchpad" {
 #
     # Workspaces
     set $ws_www 1:www
-    set $ws_mail 2:mail
-    set $ws_editor 3:editor
-    set $ws_terminals 4:terminals
-    set $ws_discord 5:discord
+    # set $ws_mail 2:mail
+    set $ws_editor 2:editor
+    set $ws_terminals 3:terminals
+    set $ws_discord 4:discord
 
     # Switch to workspace
     bindsym $mod+1 workspace $ws_www
-    bindsym $mod+2 workspace $ws_mail
-    bindsym $mod+3 workspace $ws_editor
-    bindsym $mod+4 workspace $ws_terminals
-    bindsym $mod+5 workspace $ws_discord
+    # bindsym $mod+2 workspace $ws_mail
+    bindsym $mod+2 workspace $ws_editor
+    bindsym $mod+3 workspace $ws_terminals
+    bindsym $mod+4 workspace $ws_discord
+    bindsym $mod+5 workspace number 5
     bindsym $mod+6 workspace number 6
     bindsym $mod+7 workspace number 7
     bindsym $mod+8 workspace number 8
@@ -189,10 +190,11 @@ input "1739:52620:SYNA8005:00_06CB:CD8C_Touchpad" {
     bindsym $mod+0 workspace number 10
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace $ws_www
-    bindsym $mod+Shift+2 move container to workspace $ws_mail
-    bindsym $mod+Shift+3 move container to workspace $ws_editor
-    bindsym $mod+Shift+4 move container to workspace $ws_terminals
-    bindsym $mod+Shift+5 move container to workspace $ws_discord
+    # bindsym $mod+Shift+2 move container to workspace $ws_mail
+    bindsym $mod+Shift+2 move container to workspace $ws_editor
+    bindsym $mod+Shift+3 move container to workspace $ws_terminals
+    bindsym $mod+Shift+4 move container to workspace $ws_discord
+    bindsym $mod+Shift+5 move container to workspace number 5
     bindsym $mod+Shift+6 move container to workspace number 6
     bindsym $mod+Shift+7 move container to workspace number 7
     bindsym $mod+Shift+8 move container to workspace number 8
@@ -213,9 +215,7 @@ input "1739:52620:SYNA8005:00_06CB:CD8C_Touchpad" {
 
     ### Assign applications to workspaces
     for_window [app_id="^firefox"] move window to workspace $ws_www
-    for_window [class="Thunderbird"] move window to workspace $ws_mail
-    for_window [title="Inbox - mverna27@gmail.com - Gmail — Mozilla Firefox"] move window to workspace $ws_mail
-    for_window [title="Inbox - adatmv@gmail.com - Gmail — Mozilla Firefox"] move window to workspace $ws_mail
+    # for_window [class="Thunderbird"] move window to workspace $ws_mail
     for_window [title="^Neovim$"] move window to workspace $ws_editor
     for_window [class="^code-oss"] move window to workspace $ws_editor
     for_window [class="^discord"] move window to workspace $ws_discord
