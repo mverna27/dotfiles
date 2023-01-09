@@ -23,6 +23,7 @@
     //"modules-right": ["tray","gamemode","custom/check_otd","custom/check_vrr","custom/max_render_time","cpu","memory","pulseaudio","clock"],
     "modules-right": [
         "idle_inhibitor",
+        "bluetooth",
         "network",
         "pulseaudio",
         "battery",
@@ -85,8 +86,8 @@
     "pulseaudio": {
      // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%  {format_source}",
-        "format-bluetooth": "{icon} {volume}%  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-bluetooth": " {icon} {volume}%  {format_source}",
+        "format-bluetooth-muted": "  {icon}  {format_source}",
         "format-muted": " {format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
@@ -144,8 +145,12 @@
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
-},
+            }
+    },
+
+    "bluetooth": {
+        "on-click": "$HOME/arch/scripts/bluetooth_power_toggle_and_connect_airpods.sh"
+    },
 
     "tray":{
         "icon-size": 18,

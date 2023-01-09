@@ -260,6 +260,19 @@ window#waybar.hidden {
     /*color: #FFFFFF;*/
 }
 
+#bluetooth {
+    margin-top: 6px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    transition: none;
+    /*color: #161320;*/
+    background: #0082FC;
+    color: #FFFFFF;
+}
+
 #tray {
     margin-top: 6px;
     margin-left: 8px;
