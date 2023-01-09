@@ -149,6 +149,9 @@
     },
 
     "bluetooth": {
+        "format": "",
+        "format-off": "",
+        "tooltip-format": "{status}",
         "on-click": "$HOME/arch/scripts/bluetooth_power_toggle_and_connect_airpods.sh"
     },
 
