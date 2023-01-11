@@ -8,4 +8,4 @@ then
 	ln -sf $HOME/.config/sway/wallpaper_profiles/private $HOME/.config/sway/active_wallpaper
 fi
 
-swaymsg reload
+swaymsg 'output * bg $HOME/.config/sway/active_wallpaper fill'
