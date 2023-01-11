@@ -35,7 +35,7 @@ font pango: DejaVu Sans Mono 11
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-   output * bg active_wallpaper fill
+output * bg active_wallpaper fill
 #
 # Example configuration:
 #
