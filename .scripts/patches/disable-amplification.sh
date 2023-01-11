@@ -1,4 +1,4 @@
-#!/bin/bash
+#!usr/bin/env bash
 # Need to be run as sudo
 
 check=$(pacman -Q wireplumber pipewire-media-session 2>/dev/null | cut -d' ' -f1)

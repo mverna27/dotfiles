@@ -1,0 +1,6 @@
+# Remove carriage returns from file
+sed -i 's/\r//g' FileWithCarriageReturns.sh
+
+# Install packages from package lists
+sudo pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist-pacman))
+yay -S --needed - < pkglist-aur

@@ -1,0 +1,27 @@
+-> fix no audio (dummy device)
+https://bbs.archlinux.org/viewtopic.php?id=272060
+a quick hack could be trying to enable snd_hda_intel via e.g. /etc/modprobe.d/inteldsp.conf
+options snd_intel_dspcfg dsp_driver=1
+this will break internal mic support but might at least get you audio out.
+
+
+
+-> backlight
+https://github.com/haikarainen/light
+https://wiki.archlinux.org/title/backlight
+(add user to video group and control light with: "light -U" and "light -A")
+
+
+
+-> bluetooth stop stealing airpods connection from iphone
+https://wiki.archlinux.org/title/bluetooth
+in /etc/bluetooth/main.conf
+[Policy]
+AutoEnable=false
+
+
+
+-> libinput fix scroll speed
+yay -S libinput-config-git
+sudo nvim /etc/libinput.conf
+scroll-factor=0.2
