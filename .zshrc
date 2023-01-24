@@ -212,7 +212,8 @@ config() {
 	cp /etc/environment $HOME/.systemwide_configs/etc/environment
 #	cp /etc/systemd/system/getty@tty1.service.d/autologin.conf $HOME/.systemwide_configs/etc/systemd/system/getty@tty1.service.d/autologin.conf
 #	cp /etc/wireplumber/main.lua.d/50-alsa-config.lua $HOME/.systemwide_configs/etc/wireplumber/main.lua.d/50-alsa-config.lua
-        cp /etc/libinput.conf $HOME/.systemwide_configs/etc/libinput.conf
+    cp /etc/libinput.conf $HOME/.systemwide_configs/etc/libinput.conf
+    cp /usr/lib/systemd/system-sleep/bluetooth_check_connected_and_power_off.sh $HOME/.systemwide_configs/usr/lib/systemd/system-sleep/bluetooth_check_connected_and_power_off.sh
 	git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
 }
 
