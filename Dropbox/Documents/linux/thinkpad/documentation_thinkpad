@@ -25,3 +25,10 @@ AutoEnable=false
 yay -S libinput-config-git
 sudo nvim /etc/libinput.conf
 scroll-factor=0.2
+
+
+
+-> connect AirPods Pro to Fedora (Gnome)
+in /etc/bluetooth/main.conf find line
+ControllerMode
+and change ir to bredr
